@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <%- include('./partials/head') %>
+</head>
+<body class="w-full h-screen">
+    <%- include('./partials/header') %>
+
+
+    <div class="w-full h-[80%] flex flex-col justify-center items-center">
+        <form id="formRegister" action="/auth/register" method="POST" class="bg-gray-200 p-2 rounded-md flex flex-col gap-4 w-[20%]">
+            <h2 class="font-bold text-2xl text-gray-900 text-center">Registro</h2>
+            <div class="flex flex-col">
+                <label for="name" class="text-gray-700 text-sm">Nombre</label>
+                <input type="text" name="name" id="name" class="px-2 py-1 text-white bg-gray-700 outline-none rounded">
+            </div>
+            <div class="flex flex-col">
+                <label for="email" class="text-gray-700 text-sm">Correo</label>
+                <input type="email" name="email" id="email" class="px-2 py-1 text-white bg-gray-700 outline-none rounded">
+            </div>
+            <div class="flex flex-col">
+                <label for="password" class="text-gray-700 text-sm">Contraseña</label>
+                <input type="password" name="password" id="password" class="px-2 py-1 text-white bg-gray-700 outline-none rounded">
+            </div>
+            <div class="flex justify-center">
+                <button id="register" type="submit" class="border-2 border-gray-900 text-gray-900 py-1 px-2 rounded-xl">Registrar</button>
+            </div>
+        </form>
+    </div>
+    
+
+    <script>
+        const form = document.getElementById("formRegister");
+        const btnSend = document.getElementById("register");
+
+        const name = document.getElementById("name")
+        const email = document.getElementById("email")
+        const passw = document.getElementById("password")
+
+        btnSend.addEventListener("click", (e) => {
+            e.preventDefault()
+
+            if(name.value === "" || email.value === "" || passw.value === ""){
+                alert("No puedes enviar campos vacíos");
+                return;
+            }
+
+            form.submit();
+        })
+
+
+
+    </script>
+
+</body>
+</html>

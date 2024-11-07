@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Book</title>
+    <%- include('./partials/head') %>
+</head>
+<body class="w-full h-screen">
+    <%- include('./partials/header') %>
+
+    <div class="w-full h-[80%]">
+        <form action="/book/new" method="POST" class="bg-gray-200">
+            <div class="">
+                <label for="">Título</label>
+                <input type="text" class="px-2 py-1 bg-gray-700">
+            </div>
+            <div class="">
+                <label for="">Author</label>
+                <input type="text" class="px-2 py-1 bg-gray-700">
+            </div>
+            <div class="">
+                <label for="">Género</label>
+                <input type="text" class="px-2 py-1 bg-gray-700">
+            </div>
+            <div class="">
+                <label for="">Portada</label>
+                <input type="file" class="px-2 py-1 bg-gray-700">
+            </div>
+            <div class="">
+                <label for="">Total de páginas</label>
+                <input type="number" class="px-2 py-1 bg-gray-700">
+            </div>
+        </form>
+    </div>
+
+    
+</body>
+</html>
